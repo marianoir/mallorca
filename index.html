@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las 6 Mejores Playas de Mallorca para la Familia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .family-info {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .beach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .beach-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .beach-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .beach-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .beach-content {
+            padding: 25px;
+        }
+
+        .beach-title {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        .distance-info {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .characteristics {
+            margin-bottom: 20px;
+        }
+
+        .characteristics h4 {
+            color: #27ae60;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .characteristics ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .characteristics li {
+            background: #ecf0f1;
+            margin-bottom: 5px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .pros-cons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .pros, .cons {
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        .pros {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: white;
+        }
+
+        .cons {
+            background: linear-gradient(45deg, #e67e22, #d35400);
+            color: white;
+        }
+
+        .pros h4, .cons h4 {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .pros ul, .cons ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .pros li, .cons li {
+            margin-bottom: 8px;
+            padding: 5px 0;
+            font-size: 0.95em;
+        }
+
+        .pros li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .cons li:before {
+            content: "⚠ ";
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .family-benefits {
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .family-benefits h4 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .benefit-leon, .benefit-lucas {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .benefit-leon h5, .benefit-lucas h5 {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            color: #f1c40f;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .legend {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .legend h3 {
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+
+        @media (max-width: 768px) {
+            .beach-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏖️ Las 6 Mejores Playas de Mallorca para Vuestra Familia</h1>
+            <div class="family-info">
+                📍 <strong>Desde Sineu</strong> | 👨‍👩‍👧‍👦 4 adultos + León (15 años) + Lucas (10 años) | 🤿 Snorkel para León | 🏊‍♂️ Aguas poco profundas para Lucas
+            </div>
+        </header>
+
+        <div class="legend">
+            <h3>🎯 Playas Seleccionadas Especialmente para Vosotros</h3>
+            <p>Hemos elegido estas 6 playas considerando las necesidades específicas de León (snorkel y aguas más profundas) y Lucas (aguas tranquilas y poco profundas para jugar en la orilla), así como la comodidad para toda la familia desde Sineu.</p>
+        </div>
+
+        <div class="beach-grid">
+            <!-- Playa de Alcúdia -->
+            <div class="beach-card">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=250&fit=crop" alt="Playa de Alcúdia" class="beach-image">
+                <div class="beach-content">
+                    <h3 class="beach-title">🏖️ Playa de Alcúdia</h3>
+                    <div class="distance-info">🚗 35 km desde Sineu (30-35 minutos)</div>
+                    
+                    <div class="description">
+                        Una de las playas más familiares de Mallorca, con 3.5 km de arena blanca y fina. Perfecta combinación de aguas poco profundas para niños y zonas más profundas para adolescentes. Cuenta con Bandera Azul y todos los servicios necesarios.
+                    </div>
+
+                    <div class="characteristics">
+                        <h4>🌟 Características Principales</h4>
+                        <ul>
+                            <li>Arena blanca y fina</li>
+                            <li>Aguas cristalinas y generalmente calmadas</li>
+                            <li>Muy extensa (3.5 km)</li>
+                            <li>Bandera Azul - excelente calidad</li>
+                            <li>Zona de juegos infantiles</li>
+                            <li>Alquiler de kayaks y equipos acuáticos</li>
+                        </ul>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Ventajas</h4>
+                            <ul>
+                                <li>Perfecta para familias</li>
+                                <li>Muchos servicios (restaurantes, tiendas)</li>
+                                <li>Fácil acceso desde Sineu</li>
+                                <li>Socorristas en temporada</li>
+                                <li>Parking disponible</li>
+                                <li>Excursiones para ver delfines</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Desventajas</h4>
+                            <ul>
+                                <li>Muy turística en verano</li>
+                                <li>Puede haber oleaje del norte</li>
+                                <li>Parking limitado en alta temporada</li>
+                                <li>Bastante concurrida</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="family-benefits">
+                        <h4>👨‍👩‍👧‍👦 ¿Por qué es perfecta para vosotros?</h4>
+                        <div class="benefits-grid">
+                            <div class="benefit-leon">
+                                <h5>🤿 Para León (15 años)</h5>
+                                <p>Excelente para snorkel con buena visibilidad. Puede alquilar kayaks y hay zonas donde el agua se hace más profunda gradualmente. Posibilidad de excursiones para ver delfines.</p>
+                            </div>
+                            <div class="benefit-lucas">
+                                <h5>🏊‍♂️ Para Lucas (10 años)</h5>
+                                <p>Aguas muy poco profundas durante muchos metros, perfectas para jugar tranquilo en la orilla. Arena suave y playa muy amplia para moverse libremente. Zona de juegos cerca.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Playa de Muro -->
+            <div class="beach-card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=250&fit=crop" alt="Playa de Muro" class="beach-image">
+                <div class="beach-content">
+                    <h3 class="beach-title">🌊 Playa de Muro</h3>
+                    <div class="distance-info">🚗 25 km desde Sineu (25 minutos)</div>
+                    
+                    <div class="description">
+                        Continuación natural de Alcúdia, con 5.5 km de costa y zonas completamente vírgenes. Ideal para familias por sus aguas poco profundas y extensa zona de pinares que proporciona sombra natural.
+                    </div>
+
+                    <div class="characteristics">
+                        <h4>🌟 Características Principales</h4>
+                        <ul>
+                            <li>5.5 km de arena fina</li>
+                            <li>Zonas vírgenes sin construcciones</li>
+                            <li>Extensa zona de pinares con sombra</li>
+                            <li>Aguas muy poco profundas</li>
+                            <li>Fondo completamente arenoso</li>
+                            <li>Menos masificada que Alcúdia</li>
+                        </ul>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Ventajas</h4>
+                            <ul>
+                                <li>Perfecta para niños pequeños</li>
+                                <li>Sombra natural abundante</li>
+                                <li>Menos masificada</li>
+                                <li>Parking más fácil</li>
+                                <li>Zonas completamente naturales</li>
+                                <li>Muy cerca de Sineu</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Desventajas</h4>
+                            <ul>
+                                <li>Menos servicios en zonas vírgenes</li>
+                                <li>Puede estar muy llena los domingos</li>
+                                <li>Viento ocasional</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="family-benefits">
+                        <h4>👨‍👩‍👧‍👦 ¿Por qué es perfecta para vosotros?</h4>
+                        <div class="benefits-grid">
+                            <div class="benefit-leon">
+                                <h5>🤿 Para León (15 años)</h5>
+                                <p>Aunque más tranquila que otras playas, tiene zonas donde puede practicar snorkel. La extensión permite encontrar zonas menos concurridas para explorar.</p>
+                            </div>
+                            <div class="benefit-lucas">
+                                <h5>🏊‍♂️ Para Lucas (10 años)</h5>
+                                <p>¡Perfecta! Puede caminar 50+ metros dentro del agua sin que le cubra. Fondo totalmente arenoso (sin rocas) y sombra natural garantizada bajo los pinos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cala Mondragó -->
+            <div class="beach-card">
+                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=250&fit=crop" alt="Cala Mondragó" class="beach-image">
+                <div class="beach-content">
+                    <h3 class="beach-title">🏞️ Cala Mondragó</h3>
+                    <div class="distance-info">🚗 55 km desde Sineu (50-55 minutos)</div>
+                    
+                    <div class="description">
+                        Parte del Parque Natural de Mondragó, esta cala combina arena fina con aguas cristalinas en un entorno natural protegido. Perfecta para snorkel con una rica vida marina y aguas tranquilas ideales para niños.
+                    </div>
+
+                    <div class="characteristics">
+                        <h4>🌟 Características Principales</h4>
+                        <ul>
+                            <li>Dentro del Parque Natural</li>
+                            <li>Aguas cristalinas turquesas</li>
+                            <li>Arena suave y fina</li>
+                            <li>Rica vida marina</li>
+                            <li>Entorno natural protegido</li>
+                            <li>Senderos naturales cercanos</li>
+                        </ul>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Ventajas</h4>
+                            <ul>
+                                <li>Entorno natural único</li>
+                                <li>Excelente para snorkel</li>
+                                <li>Aguas muy limpias</li>
+                                <li>Menos masificada</li>
+                                <li>Areas de picnic</li>
+                                <li>Senderos para explorar</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Desventajas</h4>
+                            <ul>
+                                <li>Más lejos de Sineu</li>
+                                <li>Parking limitado</li>
+                                <li>Menos servicios comerciales</li>
+                                <li>Puede estar concurrida en verano</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="family-benefits">
+                        <h4>👨‍👩‍👧‍👦 ¿Por qué es perfecta para vosotros?</h4>
+                        <div class="benefits-grid">
+                            <div class="benefit-leon">
+                                <h5>🤿 Para León (15 años)</h5>
+                                <p>¡Paraíso del snorkel! Rica vida marina, aguas cristalinas y cuevas submarinas para explorar. Una de las mejores calas de Mallorca para buceo superficial.</p>
+                            </div>
+                            <div class="benefit-lucas">
+                                <h5>🏊‍♂️ Para Lucas (10 años)</h5>
+                                <p>Aguas tranquilas y protegidas perfectas para jugar. Arena suave, entorno natural relajante y zonas poco profundas ideales para chapotear con seguridad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cala Llombards -->
+            <div class="beach-card">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=250&fit=crop" alt="Cala Llombards" class="beach-image">
+                <div class="beach-content">
+                    <h3 class="beach-title">🏖️ Cala Llombards</h3>
+                    <div class="distance-info">🚗 60 km desde Sineu (55-60 minutos)</div>
+                    
+                    <div class="description">
+                        Una cala de postal con arena blanca finísima y aguas turquesas. Fácil acceso, servicios completos y perfecta para familias. Las aguas poco profundas la hacen ideal para niños, mientras que las zonas rocosas ofrecen excelente snorkel.
+                    </div>
+
+                    <div class="characteristics">
+                        <h4>🌟 Características Principales</h4>
+                        <ul>
+                            <li>Arena blanca y finísima</li>
+                            <li>Aguas color turquesa</li>
+                            <li>Fácil acceso desde parking</li>
+                            <li>Servicio de socorristas</li>
+                            <li>Chiringuito en la playa</li>
+                            <li>Alquiler de tumbonas</li>
+                        </ul>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Ventajas</h4>
+                            <ul>
+                                <li>Acceso muy fácil</li>
+                                <li>Todos los servicios</li>
+                                <li>Perfecta para fotografías</li>
+                                <li>Aguas muy limpias</li>
+                                <li>Ideal para snorkel</li>
+                                <li>Parking gratuito</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Desventajas</h4>
+                            <ul>
+                                <li>Distancia desde Sineu</li>
+                                <li>Muy popular (concurrida)</li>
+                                <li>Cala no muy grande</li>
+                                <li>Parking lleno en temporada alta</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="family-benefits">
+                        <h4>👨‍👩‍👧‍👦 ¿Por qué es perfecta para vosotros?</h4>
+                        <div class="benefits-grid">
+                            <div class="benefit-leon">
+                                <h5>🤿 Para León (15 años)</h5>
+                                <p>Excelente snorkel en las zonas rocosas de los laterales. Aguas cristalinas con hasta 25°C en verano. Perfecta visibilidad para explorar el fondo marino.</p>
+                            </div>
+                            <div class="benefit-lucas">
+                                <h5>🏊‍♂️ Para Lucas (10 años)</h5>
+                                <p>Bahía protegida con aguas poco profundas y tranquilas. Arena finísima perfecta para jugar y construir castillos. Socorristas para mayor tranquilidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cala Mesquida -->
+            <div class="beach-card">
+                <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=250&fit=crop" alt="Cala Mesquida" class="beach-image">
+                <div class="beach-content">
+                    <h3 class="beach-title">🏝️ Cala Mesquida</h3>
+                    <div class="distance-info">🚗 45 km desde Sineu (40-45 minutos)</div>
+                    
+                    <div class="description">
+                        Un paraíso natural en el noreste de Mallorca, rodeada de dunas y pinos. Con Bandera Azul, ofrece aguas cristalinas perfectas para snorkel y zonas poco profundas ideales para niños. Entorno natural protegido con aves marinas.
+                    </div>
+
+                    <div class="characteristics">
+                        <h4>🌟 Características Principales</h4>
+                        <ul>
+                            <li>Arena dorada y fina</li>
+                            <li>Rodeada de dunas naturales</li>
+                            <li>Bandera Azul</li>
+                            <li>Aguas azul turquesa</li>
+                            <li>Zona de nidificación de aves</li>
+                            <li>Entorno completamente natural</li>
+                        </ul>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Ventajas</h4>
+                            <ul>
+                                <li>Paisaje espectacular</li>
+                                <li>Perfecta para snorkel</li>
+                                <li>Menos turística</li>
+                                <li>Entorno natural único</li>
+                                <li>Bandera Azul de calidad</li>
+                                <li>Avistamiento de aves</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Desventajas</h4>
+                            <ul>
+                                <li>Puede haber oleaje con viento</li>
+                                <li>Menos servicios</li>
+                                <li>Parking limitado</li>
+                                <li>Acceso con algo de caminata</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="family-benefits">
+                        <h4>👨‍👩‍👧‍👦 ¿Por qué es perfecta para vosotros?</h4>
+                        <div class="benefits-grid">
+                            <div class="benefit-leon">
+                                <h5>🤿 Para León (15 años)</h5>
+                                <p>Aguas muy limpias y cristalinas ideales para snorkel. Puede observar aves marinas y explorar las dunas. Ambiente más natural y aventurero.</p>
+                            </div>
+                            <div class="benefit-lucas">
+                                <h5>🏊‍♂️ Para Lucas (10 años)</h5>
+                                <p>Playa amplia con mucho espacio para jugar en la arena. Aguas generalmente tranquilas y poco profundas. Entorno natural perfecto para explorar con seguridad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Playa de Camp de Mar -->
+            <div class="beach-card">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=250&fit=crop" alt="Playa de Camp de Mar" class="beach-image">
+                <div class="beach-content">
+                    <h3 class="beach-title">🏖️ Playa de Camp de Mar</h3>
+                    <div class="distance-info">🚗 50 km desde Sineu (45-50 minutos)</div>
+                    
+                    <div class="description">
+                        Una playa única con un islote conectado por pasarela que la hace especial y divertida para niños. Aguas tranquilas, ambiente familiar y el restaurante en el islote añade un toque de aventura. Perfecta combinación de comodidad y diversión.
+                    </div>
+
+                    <div class="characteristics">
+                        <h4>🌟 Características Principales</h4>
+                        <ul>
+                            <li>Islote conectado por pasarela</li>
+                            <li>Restaurante en el islote</li>
+                            <li>Aguas muy tranquilas</li>
+                            <li>Arena fina y dorada</li>
+                            <li>Ambiente familiar y seguro</li>
+                            <li>Todos los servicios disponibles</li>
+                        </ul>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Ventajas</h4>
+                            <ul>
+                                <li>Única y divertida (islote)</li>
+                                <li>Muy familiar y segura</li>
+                                <li>Aguas extremadamente tranquilas</li>
+                                <li>Fácil parking</li>
+                                <li>Restaurante especial</li>
+                                <li>Socorristas y servicios</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Desventajas</h4>
+                            <ul>
+                                <li>Playa no muy grande</li>
+                                <li>Muy turística</li>
+                                <li>Poco espacio con sombra natural</li>
+                                <li>Precios altos en restaurantes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="family-benefits">
+                        <h4>👨‍👩‍👧‍👦 ¿Por qué es perfecta para vosotros?</h4>
+                        <div class="benefits-grid">
+                            <div class="benefit-leon">
